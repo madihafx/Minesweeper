@@ -26,15 +26,19 @@ public class Minesweeper{
 			}
 		}
 
-		//counter for how many bombs a tile is touching !!!unreviewed!!!
+		//counter for how many bombs our tile is touching !!!unreviewed!!!
 		for (i = 0; i < 5; i++) {
 			for j = 0; j<5; j++) {
 				if (matrix[i][j] != valueOfBomb) {
 					int thenumber = 0;
-					// wait i'll figure out how to loop through the rows & columns tomorrow but basically my plan is to store how many bombs are touching our tile in thenumber. 
-					for 
-					
-					thenumber = matrix[r][c]; 
+					for (int row = Math.max(1,i-1); row <= Math.max(i+1); row++) {
+						for (int column = Math.max(1,j-1); column <= Math.max(j+1); column++) {
+							if ([row][column] == valueOfBomb) {
+								thenumber++
+						}
+					}
+							thenumber = matrix[row][column]; 
+				}
 			}
 		}
 		
