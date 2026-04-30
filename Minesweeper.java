@@ -25,36 +25,34 @@ public class Minesweeper{
 				placedBombs ++ ;
 			}
 		}
-
-		//counter for how many bombs our tile is touching !!!unreviewed!!!
+int i = 0; int j = 0; int row = 0; int column = 0;
+		//counter for how many bombs our tile is touching!!!
 		for (i = 0; i < 5; i++) {
-			for j = 0; j<5; j++) {
+			for (j = 0; j < 5; j++) {
 				if (matrix[i][j] != valueOfBomb) {
 					int thenumber = 0;
-					for (int row = Math.max(1,i-1); row <= Math.max(i+1); row++) {
-						for (int column = Math.max(1,j-1); column <= Math.max(j+1); column++) {
-							if ([row][column] == valueOfBomb) {
-								thenumber++
-						}
+					for (row = Math.max(0,i-1); row <= Math.min(4, i+1); row++) {
+						for (column = Math.max(0,j-1); column <= Math.min(4, j+1); column++) {
+							if (matrix[row][column] == valueOfBomb) {
+								thenumber++;
+							}
+						}			
 					}
-							thenumber = matrix[row][column]; 
+					matrix[i][j] = thenumber;
 				}
 			}
 		}
-		
 		//Printing the board
-		int i = 0;
-		int j = 0;
+		int k = 0;
+		int l = 0;
 		
-		for (i = 0; i < 5; i++) {
-			for(j = 0; j < 5; j++) {
+		for (k = 0; k < 5; k++) {
+			for(l = 0; l < 5; l++) {
 			
-			System.out.print(matrix [i][j] + " ");
+			System.out.print(matrix [k][l] + " ");
 			}
 		//new line for each row	
 		System.out.println();
-		}
-
-		
-	}
+			}
+    }
 }
