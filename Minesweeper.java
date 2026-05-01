@@ -14,7 +14,6 @@ public class Minesweeper{
 		int numberOfBombs = 5;
 		Random rand = new Random();
 		
-		System.out.print("Test");
 		
 		//placing bombs in random spots
 		int placedBombs = 0;
